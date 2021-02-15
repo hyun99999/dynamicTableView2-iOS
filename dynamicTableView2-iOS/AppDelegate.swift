@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  dynamicTableView2-iOS
+//  DynamicTableViewTutorial
 //
-//  Created by kimhyungyu on 2021/02/14.
+//  Created by kimhyungyu on 2021/01/07.
 //
 
 import UIKit
