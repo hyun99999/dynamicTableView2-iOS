@@ -101,10 +101,12 @@ extension ViewController: SwipeTableViewCellDelegate {
             })
             
             // customize the action appearance
-            thumbsUpAction.image = UIImage(systemName: "hand.thumbsup.fill")
-            thumbsUpAction.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            thumbsUpAction.title = dataItem.isThumbsUp ? "추천 해제" : "추천"
+            thumbsUpAction.image = UIImage(systemName: dataItem.isThumbsUp ? "hand.thumbsup" : "hand.thumbsup.fill")
+            thumbsUpAction.backgroundColor = dataItem.isThumbsUp ? .systemGray2 : #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             
             return [thumbsUpAction]
+            
         case .right:
             let heartAction = SwipeAction(style: .default, title: "좋아요", handler: { action, indexPath in
                 print("heartAction come")
@@ -116,9 +118,40 @@ extension ViewController: SwipeTableViewCellDelegate {
                 })
             })
             // customize the action appearance
-            heartAction.image = UIImage(systemName: "heart.fill")
-            heartAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-            return [heartAction]
+            heartAction.title = dataItem.isFavorite ? "좋아요 해제" : "좋아요"
+            heartAction.image = UIImage(systemName: dataItem.isFavorite ? "heart" : "heart.fill")
+            heartAction.backgroundColor = dataItem.isFavorite ? .systemGray2 : #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+            
+            // 바텀 액션 클로저
+            let closure: (UIAlertAction) -> Void = {
+                (action: UIAlertAction) in
+                //셀 액션 닫기
+                cell.hideSwipe(animated: true)
+                if let selectedTitle = action.title {
+                    print("selectedTitle : \(selectedTitle)")
+                    let alertController = UIAlertController(title: selectedTitle, message: "클릭됨", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+            
+            // 더보기 액션
+            let moreAction = SwipeAction(style: .default, title: "더보기", handler: {
+                action, indexPath in
+                print("더보기 액션")
+                let bottomAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                bottomAlertController.addAction(UIAlertAction(title: "댓글", style: .default, handler: closure))
+                bottomAlertController.addAction(UIAlertAction(title: "상세보기", style: .default, handler: closure))
+                bottomAlertController.addAction(UIAlertAction(title: "메세지보기", style: .default, handler: closure))
+                bottomAlertController.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: closure))
+                
+                self.present(bottomAlertController, animated: true, completion: nil)
+            })
+            // 더보기 액션 꾸미기
+            moreAction.image = UIImage(systemName: "elipsis.circle")
+            moreAction.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+            
+            return [moreAction, heartAction]
         }
         
 //        guard orientation == .right else { return nil }
