@@ -23,7 +23,7 @@ class Feed {
 
 class ViewController: UIViewController {
     
-    let contentArray = [
+    var contentArray = [
         Feed(content: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters"),
         Feed(content: "There are many variations of passages of Lorem Ipsum available"),
         Feed(content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
@@ -129,6 +129,7 @@ extension ViewController: SwipeTableViewCellDelegate {
                 cell.hideSwipe(animated: true)
                 if let selectedTitle = action.title {
                     print("selectedTitle : \(selectedTitle)")
+                    //alertController 생성
                     let alertController = UIAlertController(title: selectedTitle, message: "클릭됨", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
                     self.present(alertController, animated: true, completion: nil)
@@ -139,6 +140,7 @@ extension ViewController: SwipeTableViewCellDelegate {
             let moreAction = SwipeAction(style: .default, title: "더보기", handler: {
                 action, indexPath in
                 print("더보기 액션")
+                //alertController 생성
                 let bottomAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 bottomAlertController.addAction(UIAlertAction(title: "댓글", style: .default, handler: closure))
                 bottomAlertController.addAction(UIAlertAction(title: "상세보기", style: .default, handler: closure))
@@ -151,7 +153,18 @@ extension ViewController: SwipeTableViewCellDelegate {
             moreAction.image = UIImage(systemName: "elipsis.circle")
             moreAction.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
             
-            return [moreAction, heartAction]
+            //삭제 액션
+            let deleteAction = SwipeAction(style: .destructive, title: "삭제", handler: {
+                action, indexPath in
+                print("삭제 액션")
+                self.contentArray.remove(at: indexPath.row)
+            })
+            
+            //삭제 액션 꾸미기
+            deleteAction.image = UIImage(systemName: "trash.fill")
+            deleteAction.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            
+            return [moreAction, deleteAction, heartAction]
         }
         
 //        guard orientation == .right else { return nil }
