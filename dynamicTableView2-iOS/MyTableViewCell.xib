@@ -93,6 +93,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="heartBtn" destination="0cr-3f-OoP" id="Gr6-Ag-1WP"/>
+                <outlet property="thumbsUpBtn" destination="nvx-39-hRD" id="juh-Ue-jx7"/>
                 <outlet property="userContentLabel" destination="nUC-rz-itW" id="B10-Iy-oPq"/>
                 <outlet property="userProfileImg" destination="MiU-NQ-wBu" id="eMf-9E-JcC"/>
             </connections>
