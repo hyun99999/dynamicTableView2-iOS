@@ -47,8 +47,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jR9-ar-wFy">
-                        <rect key="frame" x="8" y="191" width="70" height="20"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="jR9-ar-wFy">
+                        <rect key="frame" x="8" y="191" width="86" height="20"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cr-3f-OoP">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -59,7 +59,7 @@
                                 <state key="normal" image="heart.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvx-39-hRD">
-                                <rect key="frame" x="25" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="33" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="RKF-3q-LNg"/>
                                     <constraint firstAttribute="height" constant="20" id="ZGg-uc-Wa3"/>
@@ -67,7 +67,7 @@
                                 <state key="normal" image="hand.thumbsup.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTx-R4-JeS">
-                                <rect key="frame" x="50" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="66" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="S4t-m1-WED"/>
                                     <constraint firstAttribute="height" constant="20" id="iZi-zx-O0w"/>

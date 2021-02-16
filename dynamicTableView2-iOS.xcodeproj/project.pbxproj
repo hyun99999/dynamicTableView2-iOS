@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E8975C9F1F4CA1EF80869E8 /* Pods_dynamicTableView2_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB1B36F2F9F321F29290DB6 /* Pods_dynamicTableView2_iOS.framework */; };
 		F87612F225D96E2000E9BE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87612F125D96E2000E9BE43 /* AppDelegate.swift */; };
 		F87612F425D96E2000E9BE43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87612F325D96E2000E9BE43 /* SceneDelegate.swift */; };
 		F87612F625D96E2000E9BE43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87612F525D96E2000E9BE43 /* ViewController.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6FB1B36F2F9F321F29290DB6 /* Pods_dynamicTableView2_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dynamicTableView2_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9438E374196D6908C2F0212B /* Pods-dynamicTableView2-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dynamicTableView2-iOS.debug.xcconfig"; path = "Target Support Files/Pods-dynamicTableView2-iOS/Pods-dynamicTableView2-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DF9497EB811F1C9B66E81BE5 /* Pods-dynamicTableView2-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dynamicTableView2-iOS.release.xcconfig"; path = "Target Support Files/Pods-dynamicTableView2-iOS/Pods-dynamicTableView2-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F87612EE25D96E2000E9BE43 /* dynamicTableView2-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dynamicTableView2-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87612F125D96E2000E9BE43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87612F325D96E2000E9BE43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8975C9F1F4CA1EF80869E8 /* Pods_dynamicTableView2_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3094DEB67D5AE55C80689E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FB1B36F2F9F321F29290DB6 /* Pods_dynamicTableView2_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0E855EE19FA6978AA8993DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9438E374196D6908C2F0212B /* Pods-dynamicTableView2-iOS.debug.xcconfig */,
+				DF9497EB811F1C9B66E81BE5 /* Pods-dynamicTableView2-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F87612E525D96E2000E9BE43 = {
 			isa = PBXGroup;
 			children = (
 				F87612F025D96E2000E9BE43 /* dynamicTableView2-iOS */,
 				F87612EF25D96E2000E9BE43 /* Products */,
+				F0E855EE19FA6978AA8993DF /* Pods */,
+				EA3094DEB67D5AE55C80689E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F876130225D96E2000E9BE43 /* Build configuration list for PBXNativeTarget "dynamicTableView2-iOS" */;
 			buildPhases = (
+				6CAD3399CA6C56EE600E74B9 /* [CP] Check Pods Manifest.lock */,
 				F87612EA25D96E2000E9BE43 /* Sources */,
 				F87612EB25D96E2000E9BE43 /* Frameworks */,
 				F87612EC25D96E2000E9BE43 /* Resources */,
+				A9B79C8CEAE58DD196FF9AAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CAD3399CA6C56EE600E74B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dynamicTableView2-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9B79C8CEAE58DD196FF9AAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dynamicTableView2-iOS/Pods-dynamicTableView2-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dynamicTableView2-iOS/Pods-dynamicTableView2-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dynamicTableView2-iOS/Pods-dynamicTableView2-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F87612EA25D96E2000E9BE43 /* Sources */ = {
@@ -291,6 +360,7 @@
 		};
 		F876130325D96E2000E9BE43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9438E374196D6908C2F0212B /* Pods-dynamicTableView2-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		F876130425D96E2000E9BE43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF9497EB811F1C9B66E81BE5 /* Pods-dynamicTableView2-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

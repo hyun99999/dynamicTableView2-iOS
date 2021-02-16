@@ -1,0 +1,6 @@
+framework module Pods_dynamicTableView2_iOS {
+  umbrella header "Pods-dynamicTableView2-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
