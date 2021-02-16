@@ -48,8 +48,11 @@ func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: I
 
 ### 완성
 <p>
-<img src = width="300">
-<img src = width="300">
+<img src ="https://user-images.githubusercontent.com/69136340/108084397-7c336080-70b7-11eb-99c2-67f669c45e5d.png" width="250">
+<img src ="https://user-images.githubusercontent.com/69136340/108085567-cff27980-70b8-11eb-890f-a3d42caef7ef.png" width="250">
+<img src ="https://user-images.githubusercontent.com/69136340/108085571-d123a680-70b8-11eb-9097-3137bde3947c.png" width="250">
+<img src ="https://user-images.githubusercontent.com/69136340/108085573-d1bc3d00-70b8-11eb-908e-c10088a127a5.png" width="250">
+<img src ="https://user-images.githubusercontent.com/69136340/108085578-d2ed6a00-70b8-11eb-9752-ffb29e6c6baf.png" width="250"> 
 </p>
 
 ### 출처
