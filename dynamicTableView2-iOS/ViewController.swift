@@ -18,7 +18,6 @@ class Feed {
     //생성자
     init(content: String) {
         self.content = content
-        
     }
 }
 
@@ -67,7 +66,7 @@ extension ViewController: UITableViewDataSource{
         
         cell.delegate = self
         //데이터와 UI 연결
-        if self.contentArray.count>0 {
+        if self.contentArray.count > 0 {
             //기존에는 여기서 바로 contentArray 의 내용을 넣어주었다.
 //            cell.userContentLabel.text = contentArray[indexPath.row]
             //만든 모델자체를 cell 에 넣어준다. cell vc 에서는 모델을 가지고 ui로 표현.
@@ -92,6 +91,13 @@ extension ViewController: SwipeTableViewCellDelegate {
         case .left:
             let thumbsUpAction = SwipeAction(style: .default, title: "추천", handler: { action, indexPath in
                 print("thumbsUpAction come")
+                let updateStauts = !dataItem.isThumbsUp
+                dataItem.isThumbsUp = updateStauts
+                //0.4초의 간격을 주고 리로드함으로써 자연스러움을 보여줌.
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.4, execute: {
+                    //현재 스와이픈 한 셀만 리로드.
+                    tableView.reloadRows(at: [indexPath], with: .none)
+                })
             })
             
             // customize the action appearance
@@ -102,13 +108,18 @@ extension ViewController: SwipeTableViewCellDelegate {
         case .right:
             let heartAction = SwipeAction(style: .default, title: "좋아요", handler: { action, indexPath in
                 print("heartAction come")
+                let updateStatus = !dataItem.isFavorite
+                dataItem.isFavorite = updateStatus
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.4, execute: {
+                    //현재 스와이픈 한 셀만 리로드.
+                    tableView.reloadRows(at: [indexPath], with: .none)
+                })
             })
             // customize the action appearance
             heartAction.image = UIImage(systemName: "heart.fill")
-            heartAction.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            heartAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             return [heartAction]
         }
-        
         
 //        guard orientation == .right else { return nil }
 //
