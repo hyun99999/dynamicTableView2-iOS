@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		F87612FE25D96E2000E9BE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87612FC25D96E2000E9BE43 /* LaunchScreen.storyboard */; };
 		F876130725D96F0500E9BE43 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F876130625D96F0500E9BE43 /* MyTableViewCell.swift */; };
 		F876130A25D96F3F00E9BE43 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F876130925D96F3F00E9BE43 /* MyTableViewCell.xib */; };
+		F8D8D1B325DBC063007DCB67 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D8D1B225DBC063007DCB67 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F87612FF25D96E2000E9BE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F876130625D96F0500E9BE43 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F876130925D96F3F00E9BE43 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		F8D8D1B225DBC063007DCB67 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 				9438E374196D6908C2F0212B /* Pods-dynamicTableView2-iOS.debug.xcconfig */,
 				DF9497EB811F1C9B66E81BE5 /* Pods-dynamicTableView2-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +95,7 @@
 				F87612FA25D96E2000E9BE43 /* Assets.xcassets */,
 				F87612FC25D96E2000E9BE43 /* LaunchScreen.storyboard */,
 				F87612FF25D96E2000E9BE43 /* Info.plist */,
+				F8D8D1B225DBC063007DCB67 /* Config.swift */,
 			);
 			path = "dynamicTableView2-iOS";
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 			files = (
 				F87612F625D96E2000E9BE43 /* ViewController.swift in Sources */,
 				F876130725D96F0500E9BE43 /* MyTableViewCell.swift in Sources */,
+				F8D8D1B325DBC063007DCB67 /* Config.swift in Sources */,
 				F87612F225D96E2000E9BE43 /* AppDelegate.swift in Sources */,
 				F87612F425D96E2000E9BE43 /* SceneDelegate.swift in Sources */,
 			);

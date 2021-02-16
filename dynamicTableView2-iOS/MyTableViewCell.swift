@@ -6,10 +6,11 @@
 //
 
 import Foundation
-//mytableviewcell.xib nib 파일을 연결하기 위한 파일
 import UIKit
+import SwipeCellKit
+//mytableviewcell.xib nib 파일을 연결하기 위한 파일
 
-class MyTableViewCell: UITableViewCell {
+class MyTableViewCell: SwipeTableViewCell {
     //셀이 렌더링 될떄
     @IBOutlet weak var userProfileImg: UIImageView!
     @IBOutlet weak var userContentLabel: UILabel!
