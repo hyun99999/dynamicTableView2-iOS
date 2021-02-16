@@ -112,6 +112,7 @@ extension ViewController: SwipeTableViewCellDelegate {
                 print("heartAction come")
                 let updateStatus = !dataItem.isFavorite
                 dataItem.isFavorite = updateStatus
+                cell.hideSwipe(animated: true)
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.4, execute: {
                     //현재 스와이픈 한 셀만 리로드.
                     tableView.reloadRows(at: [indexPath], with: .none)
@@ -164,7 +165,7 @@ extension ViewController: SwipeTableViewCellDelegate {
             deleteAction.image = UIImage(systemName: "trash.fill")
             deleteAction.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
             
-            return [moreAction, deleteAction, heartAction]
+            return [deleteAction, moreAction, heartAction]
         }
         
 //        guard orientation == .right else { return nil }
@@ -183,7 +184,7 @@ extension ViewController: SwipeTableViewCellDelegate {
         var options = SwipeOptions()
         
         //액션에 대한 옵션이 구체적으로 들어감.
-        options.expansionStyle = .selection
+        options.expansionStyle = orientation == .left ? .selection : .destructive
         options.transitionStyle = .border
         
         return options
